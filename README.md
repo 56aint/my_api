@@ -98,6 +98,7 @@ code: 'EADDRINUSE',
 ```
 I terminated all the running processes with ```killall node``` and everything was fine.
 
+var assert = require('assert');
 
 ## NEXT >>> Set up your Test Environment
 -Install these as dependencies;
@@ -116,3 +117,6 @@ I terminated all the running processes with ```killall node``` and everything wa
 ```
 -In our package.json, there is a pretest script with the command: ```node scripts/create-database.js test```. The test option at the end of the command tells the script to load the variables from .env.test instead of .env.
 -There is also a posttest script in our package.json with the command: ```node scripts/drop-database.js```. This will use **```drop-database.js```** file in our **scripts** folder to delete our test database after our tests have finished running.
+
+**Reminder** In src folder, create these folders in order listed: Model, Controller, Routes, tests. The first folder will be required in the next, and so on.
+Also, associations are made in Sequelize setup file e.g. in /src/models/index.js
